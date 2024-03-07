@@ -121,6 +121,7 @@ D:\visual studio project\myTestApi\myTestApi\obj\Debug\net8.0\myTestApi.Assembly
 D:\visual studio project\myTestApi\myTestApi\obj\Debug\net8.0\myTestApi.csproj.CoreCompileInputs.cache
 D:\visual studio project\myTestApi\myTestApi\obj\Debug\net8.0\myTestApi.MvcApplicationPartsAssemblyInfo.cs
 D:\visual studio project\myTestApi\myTestApi\obj\Debug\net8.0\myTestApi.MvcApplicationPartsAssemblyInfo.cache
+D:\visual studio project\myTestApi\myTestApi\obj\Debug\net8.0\myTestApi.sourcelink.json
 D:\visual studio project\myTestApi\myTestApi\obj\Debug\net8.0\staticwebassets.build.json
 D:\visual studio project\myTestApi\myTestApi\obj\Debug\net8.0\staticwebassets.development.json
 D:\visual studio project\myTestApi\myTestApi\obj\Debug\net8.0\staticwebassets\msbuild.myTestApi.Microsoft.AspNetCore.StaticWebAssets.props
