@@ -11,6 +11,7 @@ namespace myTestApi.Mappingprofiles
             CreateMap<Pokemon, Pokemendto>();
             CreateMap<Category, Categorydto>();
             CreateMap<Country, Countrydto>();
+            CreateMap<Countrydto, Country>();
             CreateMap<Owners, Ownerdto>();
 
         }

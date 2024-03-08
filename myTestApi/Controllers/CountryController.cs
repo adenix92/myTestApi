@@ -71,6 +71,39 @@ namespace myTestApi.Controllers
             return Ok(get_owner_from_country);
         }
 
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        public IActionResult CreateNewCountry([FromBody] Countrydto _countrydto)
+        {
+            if (_countrydto==null) return BadRequest(ModelState);
+            //check the country name if it's already exist
+            var newInstanceCountry = _IcountryRep.GetCountryAll().Where(x=>x.Name.ToUpper() 
+            == _countrydto.Name.ToUpper()).FirstOrDefault();
+
+            if (newInstanceCountry != null)
+            {
+                ModelState.AddModelError("", "The Country Name Already exist");
+                return StatusCode(422, ModelState);
+            }
+
+            var addup = _mapper.Map<Country>(_countrydto);
+            
+            
+                if(!_IcountryRep.CreateNewCountry(addup))
+                    {
+                    ModelState.AddModelError("", "server was unable to process the file");
+                    return StatusCode(500, ModelState);
+                
+                    }
+                
+                
+
+            
+            return Ok("Account created successfully");
+
+        }
+
 
     }
 }

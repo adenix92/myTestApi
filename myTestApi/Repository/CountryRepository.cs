@@ -40,5 +40,29 @@ namespace myTestApi.Repository
         {
             return _Contexts.Owners.Where(c=>c.Countrys.Id==countryId).ToList();
         }
+
+        public bool deleteCountry(Country countryId)
+        {
+            _Contexts.Remove(countryId);
+            return saveCountry();
+        }
+
+        public bool saveCountry()
+        {
+            var add = _Contexts.SaveChanges();
+            return add>0?true:false;
+        }
+
+        public bool CreateNewCountry(Country country)
+        {
+            var addup = _Contexts.Add(country);
+            return saveCountry();
+
+        }
+       public bool updateCountry(Country country)
+        {
+            _Contexts.Update(country);
+            return saveCountry();
+        }
     }
 }
