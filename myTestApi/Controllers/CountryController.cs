@@ -61,12 +61,12 @@ namespace myTestApi.Controllers
         }
 
         [HttpGet("/owners/{country_Id}")]
-        [ProducesResponseType(200,Type =typeof(Country))]
+        [ProducesResponseType(200,Type =typeof(IEnumerable<Owners>))]
         [ProducesResponseType(400)]
         public IActionResult getOwnerFromCountry(int country_Id)
         {
             if(!_IcountryRep.checkCountry(country_Id)) return NotFound();
-            var get_owner_from_country = _mapper.Map<Countrydto>(_IcountryRep.getOwnerFromCountry(country_Id));
+            var get_owner_from_country = _mapper.Map<List<Ownerdto>>(_IcountryRep.getOwnerFromCountry(country_Id));
             if (!ModelState.IsValid) return BadRequest(ModelState);
             return Ok(get_owner_from_country);
         }

@@ -38,7 +38,7 @@ namespace myTestApi.Repository
 
         public ICollection<Owners> getOwnerFromCountry(int countryId)
         {
-            return _Contexts.Owners.Where(c=>c.Id==countryId).ToList();
+            return _Contexts.Owners.Where(c=>c.Countrys.Id==countryId).ToList();
         }
     }
 }

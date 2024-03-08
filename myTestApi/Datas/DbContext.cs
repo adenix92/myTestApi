@@ -45,7 +45,7 @@ namespace myTestApi.Datas
                 .HasOne(p => p.Owners)
                 .WithMany(pc=>pc.PokemenOwners)
                 .HasForeignKey(c=> c.OwnerId);
-
+            
 
 
 
